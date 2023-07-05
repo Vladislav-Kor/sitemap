@@ -119,7 +119,7 @@ class SiteMap
     {
         $categories = $this->getCategoryUrl();
         $urls = $categories['urls'];
-        array_merge($urls, $this->getProductUrl($categories['categories']));
+        $urls = array_merge($urls, $this->getProductUrl($categories['categories']));
         \Yii::$app->cache->set('sitemap', $urls, 3600 * 6);
     }
 }
